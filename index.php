@@ -62,7 +62,7 @@ Dans ses mails, Twitch ajoute que les attaquants ont pu être en mesure d’acc�
 <script>
 
 
-var isInread = 0;
+
 
 
 
@@ -94,7 +94,7 @@ var isInread = 0;
                 {
                     if(compteurLettre-1 === position)
                     {
-                        $(this).parent('p').after('<div id="inreadContainer"></div>');
+                        $(this).parents('p').after('<div id="inreadContainer"></div>');
                         break;
                     }
                     compteurLettre++;
@@ -103,12 +103,14 @@ var isInread = 0;
                     return false;
                 }
             });
-            isInread = 1;
+
+        }else{
+           $article.children('p').last().after('<div id="inreadContainer"></div>');
         }
     }
 
     return;
-})('articleId');
+})('articleId',15000);
 
 </script>
 
